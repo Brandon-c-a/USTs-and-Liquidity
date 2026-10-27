@@ -27,8 +27,8 @@ COPY (
         TRY_CAST("Outstanding Loans" AS BIGINT) AS "Outstanding Loans",
         TRY_CAST("Last Updated" AS VARCHAR) AS "Last Updated",
   )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/seclending/results/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/seclending/results/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/seclending/results/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/seclending/results/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -54,8 +54,8 @@ COPY (
         TRY_CAST("% Partial Allocation at Least Favorable Accpt. Price/Rate" AS VARCHAR) AS "% Partial Allocation at Least Favorable Accpt. Price/Rate",
         TRY_CAST("Last Updated" AS VARCHAR) AS "Last Updated",
   )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/tsy/results/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/tsy/results/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/tsy/results/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/tsy/results/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -92,8 +92,8 @@ COPY (
         TRY_CAST("Basket Pool Original Face Amt Accepted ($)" AS DOUBLE) AS "Basket Pool Original Face Amt Accepted ($)",
         TRY_CAST("Last Updated" AS VARCHAR) AS "Last Updated",
   )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/ambs/results/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/ambs/results/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/ambs/results/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/ambs/results/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -170,8 +170,8 @@ COPY (
         TRY_CAST("Total Agy Settle Amt Accepted ($Billions)" AS DOUBLE) AS "Total Agy Settle Amt Accepted ($Billions)",
         TRY_CAST("Total US Dollar Settle Amt Accepted ($Billions)" AS DOUBLE) AS "Total US Dollar Settle Amt Accepted ($Billions)",
   )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/rp/results/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/rp/results/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/rp/results/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/rp/results/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -185,8 +185,8 @@ COPY (
         TRY_CAST("MMF Prop Amt Accepted ($Billions)" AS DOUBLE) AS "MMF Prop Amt Accepted ($Billions)",
         TRY_CAST("PD Prop Amt Accepted ($Billions)" AS DOUBLE) AS "PD Prop Amt Accepted ($Billions)",
         )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/rp/reverserepo/propositions/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/rp/reverserepo/propositions/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/rp/reverserepo/propositions/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/rp/reverserepo/propositions/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -202,8 +202,8 @@ COPY (
         TRY_CAST("isSmallValue" AS VARCHAR) AS "isSmallValue",
         TRY_CAST("Last Updated" AS VARCHAR) AS "Last Updated",
   )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/fxs/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/fxs/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/fxs/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/fxs/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -227,8 +227,8 @@ COPY (
         TRY_CAST("Revision Indicator (Y/N)" AS VARCHAR) AS "Revision Indicator (Y/N)",
         TRY_CAST("Footnote ID" AS BIGINT) AS "Footnote ID",
         )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/rates/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/rates/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/rates/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/rates/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (
@@ -249,8 +249,8 @@ COPY (
         TRY_CAST("Change From Prior Year" AS DOUBLE) AS "Change From Prior Year",
         TRY_CAST("is Aggregated" AS VARCHAR) AS "is Aggregated",
         )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/soma/agency/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/soma/agency/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/soma/agency/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/soma/agency/MASTER.parquet' (FORMAT parquet);
 
 COPY (
   SELECT DISTINCT * REPLACE (     
@@ -271,6 +271,6 @@ COPY (
         TRY_CAST("Change From Prior Year" AS DOUBLE) AS "Change From Prior Year",
         TRY_CAST("is Aggregated" AS VARCHAR) AS "is Aggregated",
         )
-  FROM read_parquet('/home/boom/.workspace/J_mkts/mdata/FRBNY/soma/tsy/tmp/*.parquet', union_by_name=True)
-) TO '/home/boom/.workspace/J_mkts/mdata/FRBNY/soma/tsy/MASTER.parquet' (FORMAT parquet);
+  FROM read_parquet('~/USTs-and-Liquidity/data/FRBNY/soma/tsy/tmp/*.parquet', union_by_name=True)
+) TO '~/USTs-and-Liquidity/data/FRBNY/soma/tsy/MASTER.parquet' (FORMAT parquet);
 EOF
