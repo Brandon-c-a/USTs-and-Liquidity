@@ -1,0 +1,9 @@
+# FRBNY DataFrames
+FRB_RPr = pl.scan_parquet(FRB_RPresults_files).collect()
+FRB_sclend = pl.scan_parquet(FRB_sclend_files).collect()
+FRB_tsy = pl.scan_parquet(FRB_tsy_files).collect()
+FRB_ambs = pl.scan_parquet(FRB_ambs_files).collect()
+FRB_fxs = pl.scan_parquet(FRB_fxs_files).collect()
+FRB_rates = pl.scan_parquet(FRB_rates_files).collect()
+FRB_soma_tsy = pl.scan_parquet(FRB_soma_tsy_files).collect()
+FRB_soma_agency = pl.scan_parquet(FRB_soma_agency_files).collect()
